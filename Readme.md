@@ -150,7 +150,3 @@ A aplicação estará disponível em: `http://localhost:4200`
 - O projeto **não** utiliza arquiteturas avançadas (DDD, CQRS)
 - O foco foi em clareza de código e funcionamento correto do CRUD# TaskLy — Gerenciador de Tarefas
 
-Aplicação web para cadastro e gerenciamento de tarefas, desenvolvida com **Angular** no front-end, **ASP.NET Core Web API** no back-end e **SQL Server** como banco de dados.
-
----
-
