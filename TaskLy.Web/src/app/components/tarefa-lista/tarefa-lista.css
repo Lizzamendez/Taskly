@@ -1,0 +1,193 @@
+/* ── Header ── */
+.lista-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.4s ease-out both;
+}
+
+.lista-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lista-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+.lista-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 22px;
+  padding: 0 7px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ── Alert ── */
+.alert {
+  margin-bottom: 1.25rem;
+}
+
+/* ── State boxes ── */
+.state-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  animation: fadeUp 0.4s ease-out both;
+}
+
+.state-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.state-box p {
+  font-size: 0.95rem;
+}
+
+.state-error .state-icon {
+  color: var(--danger);
+}
+
+/* ── Spinner ── */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Table card ── */
+.table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  animation: fadeUp 0.4s ease-out both;
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Table ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.015);
+}
+
+.table-row {
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background: var(--bg-hover);
+}
+
+.table td {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+}
+
+/* ── Cells ── */
+.cell-id {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  width: 40px;
+}
+
+.cell-title {
+  font-weight: 500;
+  color: var(--text-primary);
+  max-width: 180px;
+}
+
+.cell-desc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  max-width: 260px;
+}
+
+.cell-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cell-actions {
+  width: 120px;
+}
+
+/* ── Actions ── */
+.actions-row {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.table-row:hover .actions-row {
+  opacity: 1;
+}
+
+.btn-del:hover {
+  color: var(--danger) !important;
+  background: var(--danger-bg) !important;
+}
+
+/* ── Confirm row ── */
+.confirm-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: slideDown 0.2s ease-out;
+}
+
+.confirm-text {
+  font-size: 0.78rem;
+  color: var(--danger);
+  font-weight: 500;
+  white-space: nowrap;
+}

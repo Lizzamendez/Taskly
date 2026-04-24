@@ -1,0 +1,86 @@
+<div class="page-wrapper">
+  <div class="form-shell">
+
+    <!-- Back link -->
+    <a routerLink="/tarefas" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Voltar
+    </a>
+
+    <!-- Title -->
+    <div class="form-header">
+      <h1 class="form-title">{{ isEditMode ? 'Editar Tarefa' : 'Nova Tarefa' }}</h1>
+      <p class="form-subtitle">{{ isEditMode ? 'Atualize os dados da tarefa abaixo.' : 'Preencha os dados para criar uma nova tarefa.' }}</p>
+    </div>
+
+    <!-- Alert -->
+    @if (mensagem) {
+      <div class="alert" [class.alert-success]="tipoMensagem === 'success'"
+                         [class.alert-error]="tipoMensagem === 'error'">
+        {{ mensagem }}
+      </div>
+    }
+
+    <!-- Form card -->
+    <div class="form-card">
+      <form (ngSubmit)="salvar()" class="form">
+
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input
+            id="titulo"
+            [(ngModel)]="tarefa.titulo"
+            name="titulo"
+            required
+            maxlength="200"
+            placeholder="Ex: Revisar documentação do projeto"
+            autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição <span class="label-optional">(opcional)</span></label>
+          <textarea
+            id="descricao"
+            [(ngModel)]="tarefa.descricao"
+            name="descricao"
+            maxlength="500"
+            rows="4"
+            placeholder="Adicione detalhes sobre a tarefa..."></textarea>
+          <span class="char-count">{{ tarefa.descricao.length }} / 500</span>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status</label>
+          <div class="select-wrapper">
+            <select id="status" [(ngModel)]="tarefa.status" name="status">
+              <option value="Pendente">Pendente</option>
+              <option value="Em andamento">Em andamento</option>
+              <option value="Concluída">Concluída</option>
+            </select>
+            <svg class="select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" (click)="cancelar()" class="btn btn-secondary">
+            Cancelar
+          </button>
+          <button type="submit" class="btn btn-primary" [disabled]="salvando">
+            @if (salvando) {
+              <span class="btn-spinner"></span>
+              Salvando...
+            } @else {
+              {{ isEditMode ? 'Atualizar' : 'Criar Tarefa' }}
+            }
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

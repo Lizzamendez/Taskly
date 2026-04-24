@@ -1,0 +1,51 @@
+# ── Frontend (Angular) ──
+node_modules/
+dist/
+tmp/
+out-tsc/
+bazel-out/
+.angular/
+
+# ── Backend (.NET) ──
+bin/
+obj/
+TestResults/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.ntvs*
+*.njsproj
+
+# ── Secretos ──
+.env
+.env.local
+appsettings.Development.json
+secrets.json
+
+# ── Editores e IDEs ──
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.idea/
+.vs/
+*.swp
+*.swo
+.project
+.classpath
+.settings/
+
+# ── Sistema Operativo ──
+.DS_Store
+Thumbs.db
+
+# ── Logs ──
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Pruebas y Cobertura ──
+coverage/
+.nyc_output/
