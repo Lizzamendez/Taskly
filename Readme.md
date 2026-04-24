@@ -153,3 +153,4 @@ A aplicação estará disponível em: `http://localhost:4200`
 Aplicação web para cadastro e gerenciamento de tarefas, desenvolvida com **Angular** no front-end, **ASP.NET Core Web API** no back-end e **SQL Server** como banco de dados.
 
 ---
+
